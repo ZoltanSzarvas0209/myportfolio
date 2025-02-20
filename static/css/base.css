@@ -1,0 +1,118 @@
+/*---------------------------------------------------------- general css and base.html --------------------------------------------*/
+/* Ensures the body background remains properly set */
+body {
+    background: url('/media/background5.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    padding-top: 800px; /*temp*/
+}
+
+/* Header styling */
+header {
+    background-color: black;
+    height: 300px;
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+/* Profile Image Styling */
+.profile-img {
+    width: 100%; /* Takes full width of its column */
+    max-width: 240px; /* Maximum size */
+    height: auto;
+    aspect-ratio: 1/1;
+    background: url('/media/headshot.jpg') no-repeat center center;
+    background-size: cover;
+    border-radius: 50%;
+    margin: 5%;
+}
+
+#intro {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+    margin: auto;
+}
+
+/* Navigation Block Styling */
+.nav-blk {
+    background-color: #504f4f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 10px;
+    min-height: 50px;
+}
+
+/* Ensures full-width responsiveness for navigation */
+.nav-blk a {
+    text-decoration: none;
+    color: white;
+    width: 100%;
+    display: block;
+}
+
+/* Adjusts list-inline-item width for full responsiveness */
+.list-inline-item {
+    text-align: center;
+}
+
+/* Ensures icons align properly */
+.icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+/* Navigation styling */
+.navbar {
+    background-color: #504f4f;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Adjustments for navigation links */
+.navbar-nav .nav-link {
+    color: white !important;
+    text-align: center;
+}
+
+/* Optional: Add hover effect */
+.navbar-nav .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+/* Ensure full-width responsiveness */
+.navbar-collapse {
+    text-align: center;
+}
+
+/* -------------------------------- Media Queries ------------------------------------*/
+
+
+@media (max-width: 767px) {
+    #intro {
+        text-align: center;
+        font-size: medium;
+        font-weight: 400;
+        margin: auto;
+    }
+
+    header {
+        background-color: black;
+        height: 54%;
+        width: 100%;
+        margin-bottom: 12px;
+    }
+
+    .list-inline-item {
+        font-size: 14px;
+    
+    }
+}
+  
