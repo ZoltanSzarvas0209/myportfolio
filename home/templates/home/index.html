@@ -3,24 +3,39 @@
 
 {% block content %}
 
-<div class="container-fluid hero-section d-flex align-items-center justify-content-center">
-    <div class="row w-100">
-        <a href="" class="col-12 col-md-4 text-decoration-none d-block">
-            <div class="bg-light text-black text-center rounded-3 p-5 shadow-sm">
-                <h1 class="fw-bold">SERVICES</h1>
-            </div>
-        </a>
-        <a href="" class="col-12 col-md-4 text-decoration-none d-block">
-            <div class="bg-light text-black text-center rounded-3 p-5 shadow-sm">
-                <h1 class="fw-bold">MY PORTFOLIO</h1>
-            </div>
-        </a>
-        <a href="" class="col-12 col-md-4 text-decoration-none d-block">
-            <div class="bg-light text-black text-center rounded-3 p-5 shadow-sm">
-                <h1 class="fw-bold">CONTACT</h1>
-            </div>
-        </a>
+<div class="container-fluid d-flex flex-column align-items-center justify-content-center">
+    <!-- Introduction Section -->
+    <div class="introduction-container custom-bg text-center text-white p-5 shadow-sm">
+        <h2 class="fw-bold">Welcome to My Website</h2>
+        <p class="text-white">Explore my services, portfolio, and get in touch with me.</p>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="row hero-box text-center justify-content-center">
+        <div class="col-12 col-lg-4 mb-3">
+            <a href="" class="text-decoration-none d-block custom-bg rounded-3">
+                <div class="text-white p-5">
+                    <h1 class="fw-bold">SERVICES</h1>
+                </div>
+            </a>
+        </div>
+        <div class="col-12 col-lg-4 mb-3">
+            <a href="" class="text-decoration-none d-block custom-bg rounded-3">
+                <div class="text-white p-5">
+                    <h1 class="fw-bold">MY PORTFOLIO</h1>
+                </div>
+            </a>
+        </div>
+        <div class="col-12 col-lg-4 mb-3">
+            <a href="" class="text-decoration-none d-block custom-bg rounded-3">
+                <div class="text-white p-5">
+                    <h1 class="fw-bold">CONTACT</h1>
+                </div>
+            </a>
+        </div>
     </div>
 </div>
+
+
 
 {% endblock %}

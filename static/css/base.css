@@ -4,39 +4,50 @@ body {
     background: url('/media/background5.jpg') no-repeat center center fixed;
     background-size: cover;
     color: white;
-    padding-top: 800px; /*temp*/
+    padding-top: 320px;
+    margin: 0;
+    overflow-x: hidden;
 }
 
 /* Header styling */
 header {
-    background-color: black;
-    height: 300px;
+    background-color: rgba(0, 0, 0, 0.6);
+    min-height: 300px;
+    height: auto;
     width: 100%;
     margin-bottom: 12px;
+    position: relative;
+    z-index: 1000;
+    padding: 20px 0;
 }
 
 /* Profile Image Styling */
 .profile-img {
-    width: 100%; /* Takes full width of its column */
-    max-width: 240px; /* Maximum size */
+    width: 100%;
+    max-width: 180px;
     height: auto;
     aspect-ratio: 1/1;
     background: url('/media/headshot.jpg') no-repeat center center;
     background-size: cover;
     border-radius: 50%;
-    margin: 5%;
+    margin: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.profile-img:hover {
+    transform: scale(1.2);
 }
 
 #intro {
     text-align: center;
-    font-size: 30px;
+    font-size: 24px;
     font-weight: 500;
     margin: auto;
 }
 
 /* Navigation Block Styling */
 .nav-blk {
-    background-color: #504f4f;
+    background-color: rgba(50,49,49, 0.8);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -46,73 +57,191 @@ header {
     min-height: 50px;
 }
 
-/* Ensures full-width responsiveness for navigation */
 .nav-blk a {
     text-decoration: none;
     color: white;
     width: 100%;
     display: block;
+    padding: 10px;
 }
 
-/* Adjusts list-inline-item width for full responsiveness */
 .list-inline-item {
     text-align: center;
 }
 
-/* Ensures icons align properly */
 .icon {
-    align-items: center;
-    display: inline-flex;
+    display: flex;
     justify-content: center;
+    align-items: center;
     height: 1.5rem;
     width: 1.5rem;
 }
 
-/* Navigation styling */
 .navbar {
-    background-color: #504f4f;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
 }
 
-/* Adjustments for navigation links */
+.navbar-nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
 .navbar-nav .nav-link {
     color: white !important;
     text-align: center;
+    padding: 10px;
+    transition: background 0.3s;
 }
 
-/* Optional: Add hover effect */
-.navbar-nav .nav-link:hover {
+.navbar-nav .nav-item:hover {
     background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 5px;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.3);
 }
 
-/* Ensure full-width responsiveness */
 .navbar-collapse {
     text-align: center;
 }
 
+/* Adjust row margins to fix alignment issue */
+.row {
+    margin-right: 0 !important;
+}
+
+/* ------------------------------------ footer styling ------------------------------------*/
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.6);
+    text-align: center;
+}
+.footer a {
+    color: white;
+    font-size: 36px;
+    margin: 8px;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+.footer a:hover {
+    color: #f2b91d; /* color to be changed */
+}
+
+/* ------------------------------------ index.html/Home page -------------------------------*/
+.introduction-container {
+    width: 90%;
+    border-radius: 12px;
+    padding: 20px;
+    min-height: 220px;
+}
+
+.custom-bg {
+    background-color: rgba(50,49,49, 0.8);
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.hero-box {
+    width: 90%;
+    height: auto;
+    border-radius: 12px;
+    text-align: center;
+    margin: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hero-box a {
+    margin: 6px;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+
 /* -------------------------------- Media Queries ------------------------------------*/
 
+@media (max-width: 1300px) and (min-width: 980px) {
+    .hero-box h1 {
+        font-size: 2rem;
+    }
+}
 
 @media (max-width: 767px) {
+    body {
+        padding-top: 350px;
+    }
+
     #intro {
         text-align: center;
-        font-size: medium;
+        font-size: 18px;
         font-weight: 400;
         margin: auto;
     }
 
     header {
-        background-color: black;
-        height: 54%;
-        width: 100%;
-        margin-bottom: 12px;
+        height: auto;
+        padding: 10px;
+    }
+
+    .profile-img {
+        max-width: 140px;
+        margin-bottom: 10px;
     }
 
     .list-inline-item {
         font-size: 14px;
-    
+    }
+
+    .hero-box {
+        width: 100%;
+        margin: 8px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-box a {
+        font-size: 16px;
+        height: auto;
+    }
+
+    .introduction-container {
+        width: 100%;
+        min-height: 100%;
     }
 }
-  
+
+@media (max-width: 425px) {
+    .hero-box {
+        width: 100%;
+        margin: 5px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-box a {
+        font-size: 14px;
+        padding: 15px;
+    }
+
+    .introduction-container {
+        width: 100%;
+        min-height: 100%;
+    }
+}

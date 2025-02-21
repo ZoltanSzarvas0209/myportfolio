@@ -71,7 +71,7 @@
                     </div>
 
                     <!-- Bottom Row: Navigation Links -->
-                    <nav class="navbar navbar-expand-md navbar-dark">
+                    <nav class="custom-bg navbar-expand-md navbar-dark">
                       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navLinks"
                           aria-controls="navLinks" aria-expanded="false" aria-label="Toggle navigation">
                           <span class="navbar-toggler-icon"></span>
@@ -80,7 +80,7 @@
                       <div class="collapse navbar-collapse" id="navLinks">
                           <ul class="navbar-nav w-100 d-flex justify-content-between">
                               <li class="nav-item">
-                                  <a class="nav-link" href="#">HOME</a>
+                                  <a class="nav-link" href="{% url 'home' %}">HOME</a>
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link" href="#">PORTFOLIO</a>
@@ -107,6 +107,17 @@
 
     {% block content %}
     {% endblock %}
+
+    <footer class="container-fluid footer">
+      <div class="row">
+          <div class="col-12">
+              <a href="https://www.linkedin.com" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+              <a href="https://github.com" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+              <a href="https://www.facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+              <a href="/download" title="Download"><i class="fas fa-download"></i></a>
+          </div>
+      </div>
+    </footer>
 
     {% block postloadjs %}
     {% endblock %}
