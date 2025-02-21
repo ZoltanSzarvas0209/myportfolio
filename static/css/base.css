@@ -181,14 +181,23 @@ header {
     }
 }
 
+@media (min-width: 1024px) {
+    .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+
+}
+
 @media (max-width: 767px) {
     body {
-        padding-top: 350px;
+        padding-top: 360px;
     }
 
     #intro {
         text-align: center;
-        font-size: 18px;
+        font-size: 16px;
         font-weight: 400;
         margin: auto;
     }
@@ -227,6 +236,10 @@ header {
 }
 
 @media (max-width: 425px) {
+    body {
+        padding-top: 500px;
+    }
+
     .hero-box {
         width: 100%;
         margin: 5px 0;
@@ -242,6 +255,6 @@ header {
 
     .introduction-container {
         width: 100%;
-        min-height: 100%;
+        height: auto;
     }
 }
