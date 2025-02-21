@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'portfolio/css/portfolio.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid d-flex flex-column align-items-center justify-content-center">
+    <!-- Introduction Section -->
+    <div class="introduction-container custom-bg text-center text-white p-5 shadow-sm">
+        <h2 class="fw-bold">Welcome to My Portfolio Page</h2>
+        <p class="text-white">Explore my portfolio to discover my projects, delve into my professional experience, and learn about my technical expertise and current studies.</p>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="row hero-box text-center justify-content-center">
+        <div class="col-12 col-lg-4">
+            <a href="#" class="text-decoration-none d-block custom-bg rounded-3">
+                <div class="text-white p-5">
+                    <h1 class="fw-bold">PROJECTS</h1>
+                </div>
+            </a>
+        </div>
+        <div class="col-12 col-lg-4">
+            <a href="#" class="text-decoration-none d-block custom-bg rounded-3">
+                <div class="text-white p-5">
+                    <h1 class="fw-bold">ABOUT ME</h1>
+                </div>
+            </a>
+        </div>
+        <div class="col-12 col-lg-4">
+            <a href="#" class="text-decoration-none d-block custom-bg rounded-3">
+                <div class="text-white p-5">
+                    <h1 class="fw-bold">TECH</h1>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
