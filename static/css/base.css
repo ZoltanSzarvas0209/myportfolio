@@ -45,6 +45,26 @@ header {
     margin: auto;
 }
 
+/* button style */
+.custom-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(135deg, #6e8efb, #a777e3); /* Gradient */
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.custom-btn:hover {
+    background: linear-gradient(135deg, #5b7cfa, #945bd6);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
 /* Navigation Block Styling */
 .nav-blk {
     background-color: rgba(50,49,49, 0.8);
@@ -131,7 +151,7 @@ header {
     transition: color 0.3s ease-in-out;
 }
 .footer a:hover {
-    color: #f2b91d; /* color to be changed */
+    color: linear-gradient(135deg, #5b7cfa, #945bd6); /* color to be changed */
 }
 
 /* ------------------------------------ index.html/Home page -------------------------------*/
@@ -179,15 +199,6 @@ header {
     .hero-box h1 {
         font-size: 2rem;
     }
-}
-
-@media (min-width: 1024px) {
-    .footer {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-    }
-
 }
 
 @media (max-width: 767px) {

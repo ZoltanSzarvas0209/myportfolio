@@ -16,5 +16,8 @@ def tech(request):
     return render(request, 'portfolio/tech.html')
 
 def projects(request):
-    """ A view to show the projects page """
-    return render(request, 'portfolio/projects.html')
+    """ A view to show the projects page with projects data """
+
+    projects = Project.objects.all()  # Retrieve all projects
+    
+    return render(request, 'portfolio/projects.html', {'projects': projects})
