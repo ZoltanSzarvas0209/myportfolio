@@ -97,6 +97,10 @@ header {
     width: 1.5rem;
 }
 
+.hover:hover {
+    color: #6e8efb;
+}
+
 .navbar {
     padding: 10px;
     border-radius: 12px;
@@ -152,7 +156,7 @@ header {
     transition: color 0.3s ease-in-out;
 }
 .footer a:hover {
-    color: linear-gradient(135deg, #5b7cfa, #945bd6); /* color to be changed */
+    color: #6e8efb;
 }
 
 /* ------------------------------------ index.html/Home page -------------------------------*/

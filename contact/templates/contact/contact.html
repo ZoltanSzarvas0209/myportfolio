@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container mt-5">
+
+    <div class="row text-center justify-content-center text-white custom-bg mb-3">
+        <div class="col-12">
+
+            <h2 class="p-3">LETS CONNECT !!!</h2>
+
+            <p>
+                I’m always open to new opportunities and collaborations.
+                 Whether you're looking for a skilled web developer to join your team or just want to learn more about my work, 
+                 feel free to reach out. Drop me a message below,
+                 and I’ll get back to you as soon as possible!"
+            </p>
+
+            <form class="text-center" method="post">
+                {{ contactform | crispy }}
+                {% csrf_token %}
+                <button class="custom-btn" type="submit">Submit</button>
+            </form>
+                                  
+        </div>
+    </div>
+</div>
+{% endblock content %}
