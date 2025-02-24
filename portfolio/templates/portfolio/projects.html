@@ -22,7 +22,7 @@
                             <h5 class="card-title">{{ project.name }}</h5>
                             <p class="card-text">{{ project.description|truncatewords:20 }}</p>
                             {% if project.deployed_url %}
-                                <a href="{{ project.deployed_url }}" class="custom-btn" target="_blank" rel="noopener noreferrer">
+                                <a href="{{ project.deployed_url }}" class="custom-btn text-decoration-none" target="_blank" rel="noopener noreferrer">
                                     View Project
                                 </a>
                             {% else %}
