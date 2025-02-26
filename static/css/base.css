@@ -141,6 +141,14 @@ header {
     margin-right: 0 !important;
 }
 
+
+
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+
+
 /* ------------------------------------ footer styling ------------------------------------*/
 
 .footer {
