@@ -6,9 +6,10 @@
     <div class="container mb-2 custom-bg text-white">
         <div class="row">
             <div class="col">
-                <hr>
-                <h2 class="mb-4">Shopping Bag</h2>
-                <hr>
+                <hr class="w-50 mb-3 header-div bg-white">
+                <h2 class="mb-4 text-center">Shopping Bag</h2>
+                <hr class="w-50 mb-5 header-div bg-white">
+
             </div>
         </div>
 
@@ -30,7 +31,11 @@
                             {% for item in bag_items %}
                                 <tr class="text-white">
                                     <td class="p-3 w-25">
-                                        <img class="img-fluid rounded" src="{{ item.service.image.url }}">
+                                        {% if item.service.image %}
+                                            <img class="img-fluid rounded" src="{{ item.service.image.url }}">
+                                        {% else %}
+                                            <img class="img-fluid rounded" src="{% static 'images/default-project.jpg' %}">
+                                        {% endif %}
                                     </td>
                                     <td class="py-3">
                                         <p class="my-0"><strong>{{ item.service.name }}</strong></p>

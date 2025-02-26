@@ -21,6 +21,10 @@ header {
     padding: 20px 0;
 }
 
+.header-div {
+    opacity: 0.8; /* Adjust the opacity as needed */
+}
+
 /* Profile Image Styling */
 .profile-img {
     width: 100%;
