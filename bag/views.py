@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse
 from django.http import JsonResponse
+from django.contrib import messages
+from services.models import Service
 
 
 # Create your views here.
@@ -13,6 +15,7 @@ def bag(request):
 def add_to_bag(request, item_id):
     """ Add a quantity of the specified service to the shopping bag """
 
+    service = Service.objects.get(pk=item_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
     bag = request.session.get('bag', {})
@@ -21,6 +24,7 @@ def add_to_bag(request, item_id):
         bag[item_id] += quantity
     else:
         bag[item_id] = quantity
+        messages.success(request, f'Added {service.name} to your bag')
 
     request.session['bag'] = bag
     return redirect(redirect_url)

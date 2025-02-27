@@ -148,6 +148,18 @@ header {
     cursor: pointer;
 }
 
+/*------------------------------------ Toasts styling -------------------------------------- */
+
+.message-container {
+    position: fixed;
+    top: 20%;
+    right: 5%;
+    z-index: 99999999999;
+}
+
+.toast-capper {
+    height: 6px;
+}
 
 /* ------------------------------------ footer styling ------------------------------------*/
 
