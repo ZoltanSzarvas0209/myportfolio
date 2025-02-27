@@ -20,12 +20,7 @@ def contact(request):
         contactform = Contact_form(data=request.POST)
         if contactform.is_valid():
             contactform.save()
-            messages.add_message(
-                request,
-                messages.SUCCESS,
-                "Thank you for getting in touch,\
-                we will respond as soon as possible!"
-            )
+            messages.info(request, f'Thank you for your message, I will get back to you as soon as possible!')
 
     contactform = Contact_form()
 
