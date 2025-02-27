@@ -49,7 +49,8 @@ INSTALLED_APPS = [
     'portfolio',
     'contact',
     'crispy_forms',
-    'crispy_bootstrap4',  
+    'crispy_bootstrap4',
+    'checkout',
 ]
 
 MIDDLEWARE = [

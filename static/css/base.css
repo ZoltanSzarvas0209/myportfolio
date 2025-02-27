@@ -18,7 +18,7 @@ header {
     margin-bottom: 12px;
     position: relative;
     z-index: 1000;
-    padding: 20px 0;
+    padding: 20px 20px;
 }
 
 .header-div {
@@ -28,10 +28,10 @@ header {
 /* Profile Image Styling */
 .profile-img {
     width: 100%;
-    max-width: 180px;
+    max-width: 240px;
     height: auto;
     aspect-ratio: 1/1;
-    background: url('/media/headshot.jpg') no-repeat center center;
+    background: url('/media/profile.jpg') no-repeat center center;
     background-size: cover;
     border-radius: 50%;
     margin: auto;
