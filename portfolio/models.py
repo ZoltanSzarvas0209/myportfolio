@@ -7,6 +7,7 @@ class Project(models.Model):
     description = models.TextField()
     image = models.ImageField(upload_to="project_images/", null=True, blank=True)
     deployed_url = models.URLField(max_length=500, null=True, blank=True)  # field for readme.md file for a project
+    repo_url = models.URLField(max_length=500, null=True, blank=True)
 
     def __str__(self):
         return self.name
