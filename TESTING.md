@@ -113,4 +113,28 @@ Bugs found during development:
 
 - solution: vh-100 bootstrap class removed has solved the issue.
 
- 
+3. Webhook handler did not work during development with local listener set up:
+
+-   <details> <summary> Image of issue </summary>
+    <img src="static/images/readme_images/bugs/python_404.jpg">
+    </details>
+
+-   <details> <summary> Image of issue </summary>
+    <img src="static/images/readme_images/bugs/stripe_cli.jpg">
+    </details>
+
+-   <details> <summary> Image of issue </summary>
+    <img src="static/images/readme_images/bugs/stripe_events_succeed.jpg">
+    </details>
+
+-   <details> <summary> Image of issue </summary>
+    <img src="static/images/readme_images/bugs/stripe_webhook_listener.jpg">
+    </details>
+
+-   <details> <summary> Image of issue </summary>
+    <img src="static/images/readme_images/bugs/trigger_succeed.jpg">
+    </details>
+
+- solution: after a throughout investigation where I checked my checkout views, urls and webhooks.py for errors followed by making sure the local listener is connected and listening on stripe and checking the events( where payments appeared succesfully) I eventually found that the stripe listener in the cli was triggered with an incorrect path.
+The correct trigger is stripe listen --forward-to localhost:8000/checkout/stripe/webhook/ while during development the 
+ stripe listen --forward-to localhost:8000/stripe/webhook/ path was used resulting in the 404 error.

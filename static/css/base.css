@@ -170,22 +170,28 @@ header {
 
 .footer {
     position: relative;
-    display: flex;
     justify-content: center;
     align-items: center;
-    padding: 30px;
     background-color: rgba(0, 0, 0, 0.6);
     text-align: center;
 }
-.footer a {
-    color: white;
-    font-size: 36px;
-    margin: 8px;
-    text-decoration: none;
-    transition: color 0.3s ease-in-out;
-}
+
 .footer a:hover {
     color: #6e8efb;
+}
+
+.footer-icons {
+    font-size: 42px;
+    text-decoration: none;
+}
+
+.footer-icons a {
+    color: white;
+}
+
+.download-cv a {
+    color: white;
+    font-size: 36px;
 }
 
 /* ------------------------------------ tech.html ------------------------------------------*/
