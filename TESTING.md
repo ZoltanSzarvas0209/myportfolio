@@ -138,3 +138,17 @@ Bugs found during development:
 - solution: after a throughout investigation where I checked my checkout views, urls and webhooks.py for errors followed by making sure the local listener is connected and listening on stripe and checking the events( where payments appeared succesfully) I eventually found that the stripe listener in the cli was triggered with an incorrect path.
 The correct trigger is stripe listen --forward-to localhost:8000/checkout/stripe/webhook/ while during development the 
  stripe listen --forward-to localhost:8000/stripe/webhook/ path was used resulting in the 404 error.
+
+4. Order confirmation page does not show the total cost of the order:
+
+investigating this I found that a variable was called incorrectly.
+
+-   <details> <summary> Image of issue </summary>
+    <img src="static/images/readme_images/bugs/issue3.jpg">
+    </details>
+
+-   <details> <summary> Image of issue </summary>
+    <img src="static/images/readme_images/bugs/issue3_solution.jpg">
+    </details>
+
+- solution: order.total was changed to order.order_total to reference the variable correctly.
