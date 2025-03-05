@@ -1,0 +1,21 @@
+Hello {{ order.full_name }}!
+
+This is a confirmation of your order for {% for item in order.lineitems.all %}{{ item.service.name }}, {% endfor %}. Your order information is below:
+
+Order Number: {{ order.order_number }}
+Order Date: {{ order.date }}
+
+Order Total: £{{ order.total }}
+
+Your Billing address is {{ order.street_address1 }} in {{ order.town_or_city }}, {{ order.country }}.
+
+We've got your phone number on file as {{ order.phone_number }}.
+
+If you have any questions, feel free to contact us at {{ contact_email }}.
+
+Thank you for your order!
+
+Sincerely,
+
+Zoltan Szarvas
+WebDeveloper

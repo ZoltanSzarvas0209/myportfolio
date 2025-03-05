@@ -17,7 +17,6 @@ def profile(request):
             form.save()
             messages.success(request, 'Profile updated successfully')
 
-
     form = UserProfileForm(instance=profile)
     orders = profile.orders.all()
 
@@ -26,7 +25,7 @@ def profile(request):
         'form': form,
         'orders': orders,
     }
-    
+
     return render(request, template, context)
 
 
