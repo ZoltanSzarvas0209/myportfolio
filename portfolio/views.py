@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from .models import Project
 from comments.models import Comment
 from comments.forms import CommentForm
+from django.contrib import messages
 
 
 # Create your views here.
@@ -50,15 +51,24 @@ def edit_comment(request, comment_id):
     if request.user != comment.user:
         return HttpResponseForbidden("You are not allowed to edit this comment.")
 
+    projects = Project.objects.all()  # Load all projects
+    comment_forms = {project.id: CommentForm() for project in projects}  # Default forms for new comments
+
     if request.method == "POST":
         form = CommentForm(request.POST, instance=comment)
         if form.is_valid():
             form.save()
-            return redirect('projects')  # Redirect to projects
+            messages.success(request, "Comment updated successfully.")
+            return redirect('projects')  # Reload the projects page after saving
     else:
-        form = CommentForm(instance=comment)
+        form = CommentForm(instance=comment)  # Pre-fill form with existing comment
 
-    return render(request, 'comments/edit_comment.html', {'form': form, 'comment': comment})
+    return render(request, 'portfolio/projects.html', {
+        'projects': projects,
+        'comment_forms': comment_forms,  # Keep normal comment forms
+        'edit_comment_form': form,  # Form for the comment being edited
+        'edit_comment_id': comment.id  # ID to identify the comment being edited
+    })
 
 
 @login_required
@@ -66,7 +76,7 @@ def delete_comment(request, comment_id):
     comment = get_object_or_404(Comment, id=comment_id)
 
     if request.user != comment.user:
-        return HttpResponseForbidden("You are not allowed to delete this comment.")
+        messages.warning(request, ("You are not allowed to delete this comment!"))
 
     comment.delete()
     return redirect('projects')  # Redirect to projects
