@@ -200,6 +200,12 @@ header {
     font-size: 100px;
 }
 
+/* ------------------------------------ projects.html ---------------------------------------*/
+
+.comments-section {
+    display: none;
+}
+
 /* ------------------------------------ index.html/Home page -------------------------------*/
 .introduction-container {
     width: 90%;

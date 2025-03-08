@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% load comment_form %}
+
 {% block content %}
     <div class="container mt-4">
         <div class="row">
@@ -19,7 +21,7 @@
                         {% else %}
                             <img src="{% static 'images/default-project.jpg' %}" class="card-img-top" alt="Default Image">
                         {% endif %}
-                        <div class="card-body">
+                        <div class="card-body text-center">
                             <h5 class="card-title">{{ project.name }}</h5>
                             <p class="card-text">{{ project.description|truncatewords:20 }}</p>
                             {% if project.deployed_url %}
@@ -33,6 +35,43 @@
                                 <p class="text-muted">No live project available</p>
                             {% endif %}
                         </div>
+                        <!-- Display comments count and section to show all comments / this section was created with assistence from ChatGPT -->
+                        <div class="w-100 text-center">
+                            <!-- Comment Icon & Counter -->
+                            <button class="toggle-comments w-100 custom-btn" data-project="{{ project.id }}">
+                                <i class="fa fa-comment"></i><span id="comment-count-{{ project.id }}">{{ project.comments.count }}</span> Comments
+                            </button>
+
+                            <div id="comments-section-{{ project.id }}" class="comments-section">
+                                {% for comment in project.comments.all %}
+                                    <div class="comment">
+                                        <p><strong>{{ comment.user.username }}</strong>: {{ comment.content }}</p>
+                                        <p><small>{{ comment.created_at }}</small></p>
+                    
+                                        {% if comment.user == request.user %}
+                                            <a href="{% url 'edit_comment' comment.id %}">Edit</a> |
+                                            <a href="{% url 'delete_comment' comment.id %}" onclick="return confirm('Are you sure?');">Delete</a>
+                                        {% endif %}
+                                    </div>
+                                {% empty %}
+                                    <p>No comments yet.</p>
+                                {% endfor %}
+                    
+                                <!-- Add Comment Form (Only for Logged-in Users) -->
+                                {% if user.is_authenticated %}
+                                    <h3>Leave a Comment</h3>
+                                    <form method="post">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="project_id" value="{{ project.id }}">
+                                        {{ comment_forms|dictkey:project.id }}
+                                        <button type="submit">Post Comment</button>
+                                    </form>
+                                {% else %}
+                                    <p><a href="{% url 'account_login' %}">Log in</a> to comment.</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
             {% empty %}
@@ -42,4 +81,23 @@
             {% endfor %}
         </div>
     </div>
+{% endblock %}
+
+{% block postloadjs %}
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll(".toggle-comments").forEach(button => {
+            button.addEventListener("click", function() {
+                var projectId = this.getAttribute("data-project");
+                var commentSection = document.getElementById("comments-section-" + projectId);
+                
+                if (commentSection.style.display === "none" || commentSection.style.display === "") {
+                    commentSection.style.display = "block";
+                } else {
+                    commentSection.style.display = "none";
+                }
+            });
+        });
+    });
+</script>
 {% endblock %}
