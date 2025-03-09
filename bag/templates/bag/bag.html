@@ -3,7 +3,6 @@
 {% load bag_tools %}
 
 {% block content %}
-    <div class="overlay"></div>
     <div class="container mb-2 custom-bg text-white">
         <div class="row">
             <div class="col">
@@ -50,7 +49,7 @@
                                             <div class="form-group">
                                                 <div class="input-group">
                                                     <div class="input-group-prepend">
-                                                        <button class="decrement-qty custom-btn" 
+                                                        <button class="decrement-qty quantity-btn" 
                                                             data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
                                                             <span>
                                                                 <i class="fas fa-minus fa-sm"></i>
@@ -62,7 +61,7 @@
                                                         data-item_id="{{ item.item_id }}"
                                                         id="id_qty_{{ item.item_id }}">
                                                     <div class="input-group-append">
-                                                        <button class="increment-qty custom-btn"
+                                                        <button class="increment-qty quantity-btn"
                                                             data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
                                                             <span>
                                                                 <i class="fas fa-plus fa-sm"></i>

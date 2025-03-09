@@ -12,8 +12,26 @@
 
 <details>
 
+<details>
+
 | **Feature** | **Test Method** | **Expectation** | **Outcome** |
 |-------------|-----------------|-----------------|-------------|
+| Header Responsivness | Developer Tools: 320px/375px/425px/768px/1024px/1440px | Fully Responsive Layout | PASS |
+| Footer Responsiveness | Developer Tools: 320px/375px/425px/768px/1024px/1440px | Fully Responsive Layout| PASS |
+| Home Page | Developer Tools: 320px/375px/425px/768px/1024px/1440px | Fully Responsive Layout| PASS |
+| Portfolio Page | Developer Tools: 320px/375px/425px/768px/1024px/1440px | Fully Responsive Layout| PASS |
+| Service Page | Developer Tools: 320px/375px/425px/768px/1024px/1440px | Fully Responsive Layout| PASS |
+| Contact Page | Developer Tools: 320px/375px/425px/768px/1024px/1440px | Fully Responsive Layout| PASS |
+| Service_details Page | Developer Tools: 320px/375px/425px/768px/1024px/1440px | Fully Responsive Layout| PASS |
+| Bag Page | Developer Tools: 320px/375px/425px/768px/1024px/1440px | Fully Responsive Layout| PASS | 
+| Checkout Page | Developer Tools: 320px/375px/425px/768px/1024px/1440px | Fully Responsive Layout| PASS | 
+| Checkout_success | Developer Tools: 320px/375px/425px/768px/1024px/1440px | Fully Responsive Layout| PASS | 
+| Profile Page | Developer Tools: 320px/375px/425px/768px/1024px/1440px | Fully Responsive Layout| PASS | 
+| Project Page | Developer Tools: 320px/375px/425px/768px/1024px/1440px | Fully Responsive Layout| PASS | 
+| About Page | Developer Tools: 320px/375px/425px/768px/1024px/1440px | Fully Responsive Layout| PASS |
+| Tech Page | Developer Tools: 320px/375px/425px/768px/1024px/1440px | Fully Responsive Layout| PASS | 
+
+</details>
 
 </details>
 
@@ -21,6 +39,9 @@
 
 <details>
 
+| **Feature** | **Test Method** | **Expectation** | **Outcome** |
+|-------------|-----------------|-----------------|-------------|
+| Navigation Links | Click each link | Route to relevent page | PASS |
 
 </details>
 
@@ -94,7 +115,7 @@ W3C validators used for HTML and CSS and JsHint is used to validate JAvaScript.
 
 # Bugs and Fixes <a name="bugs"></a>
 
-Bugs found during development:
+Bugs found/Minor fixes during development:
 
 1. footer dosn't stay at the bottom of the view and displaced when content isn't filling in the entire view.
 
@@ -152,3 +173,27 @@ investigating this I found that a variable was called incorrectly.
     </details>
 
 - solution: order.total was changed to order.order_total to reference the variable correctly.
+
+5. Home Page and Portfolio main sections are out of alignment and text overflowing on smaller devices:
+
+-   <details> <summary> Image of issue </summary>
+    <img src="static/images/readme_images/bugs/issue5.jpg">
+    </details>
+
+- solution: easy fix, bootstrap class applying padding was replaced by custom class and adjusted with media queries to suit all sizes.
+
+6. Services page out of alignment not fully center.
+
+- solution: overlapping bootstrap and css styles removed as well as unused div elements.
+
+7. Service_details page increase and decrease button visually unapplealing:
+
+-   <details> <summary> Image of issue </summary>
+    <img src="static/images/readme_images/bugs/issue7.jpg">
+    </details>
+
+- solution: custom class written in base.css to improve the look.
+
+8. Bag.html-s table is out of alignment on screens less than 768px.
+
+- solution: added media quieries to fex responsiveness.
