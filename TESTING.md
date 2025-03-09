@@ -41,18 +41,47 @@
 
 | **Feature** | **Test Method** | **Expectation** | **Outcome** |
 |-------------|-----------------|-----------------|-------------|
-| Navigation Links | Click each link | Route to relevent page | PASS |
+| Navigation Links - Home | Click on link | Route to relevent page | PASS |
+| Navigation Links - Portfolio | Click on link | Route to relevent page | PASS |
+| Navigation Links - Services | Click on link | Route to relevent page | PASS |
+| Navigation Links - Contact | Click on link | Route to relevent page | PASS |
+| Navigation Links - Accounts | Click on link/icon | Route to relevent page | PASS |
+| Navigation Links - Shopping Bag | Click on link/icon | Route to relevent page | PASS |
+| Accounts Link/Icon suboption - MyProfile | Click on link | Route to relevent page | PASS |
+| Accounts Link/Icon suboption - Login | Click on link | Route to relevent page | PASS |
+| Accounts Link/Icon suboption - Logout | Click on link | Route to relevent page | PASS |
+| Accounts Link/Icon suboption - Register | Click each link | Route to relevent page | PASS |
+| Home - Services | Click on link | Route to relevent page | PASS |
+| Home - Portfolio | Click on link | Route to relevent page | PASS |
+| Home - Contact | Click on link | Route to relevent page | PASS |
+| Portfolio - Project | Click on link | Route to relevent page | PASS |
+| Portfolio - About | Click on link | Route to relevent page | PASS |
+| Portfolio - Tech | Click on link | Route to relevent page | PASS |
+| Service - Each uploaded image | Click on each uploaded Service | Take to service_details | PASS |
+| Service_details - Image | Click on Service image | open image in new tab | PASS |
+| Service - back | Click on button | Take back to services | PASS |
+| Service - add to bag | Click on button | add item to shopping cart | PASS |
+| Projects - view repo | Click on button | take to relevent github repo | PASS |
+| Projects - view project | Click on button | take to live project website | PASS |
+| Projects - comments | Click on button | expand div to display comments | PASS |
+| Projects - edit | Click on button | edit an existing comment | PASS |*
+| Projects - delete | Click on button | delete comment | PASS |
+| Projects - post comment | Click on button | content written in form is posted as comment | PASS |
+| About - email link | Click on link | open up blank email addressed to my e-mail | PASS |
+| About - linkedin link | Click on link | open up LinkedIn | PASS |
+| Bag - keep shopping | Click on button | back to services | PASS |
+| Bag - secure checkout | Click on button | proceed to checkout | PASS |
+| Bag - decrease quantity button | Click on button | decrease amount displayed | PASS |
+| Bag - increase quantity | Click on button | increase amount displayed | PASS |
+| Bag - update | Click on button | update quantity, total | PASS |
+| Bag - remove | Click on button | remove item from shopping cart | PASS |
+| Checkout - adjust bag | Click on button | take back to shopping cart | PASS |
+| Checkout - complete order | Click on button | process payment provided form validation passed | PASS |
 
+
+-*: edit button dosen't automatically takes the user back to the comment, however feature is functonal - listed for future upgrade
 </details>
 
-### Testing Layout/Structure
-
-<details>
-
-| **Feature** | **Test Method** | **Expectation** | **Outcome** |
-|-------------|-----------------|-----------------|-------------|
-
-</details>
 
 ### Form Validation testing
 
@@ -96,6 +125,13 @@ W3C validators used for HTML and CSS and JsHint is used to validate JAvaScript.
 
 * CSS VALIDATION: 
     
+-   <details> <summary> base.css </summary>
+    <img src="static/images/readme_images/validation/basecss.jpg">
+    </details>
+
+-   <details> <summary> checkout.css </summary>
+    <img src="static/images/readme_images/validation/checkoutcss.jpg">
+    </details>
 
 * JavaScript VALIDATION: 
     
