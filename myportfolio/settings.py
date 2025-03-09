@@ -30,7 +30,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['myportfoliomp4-6577cc735470.herokuapp.com']
+ALLOWED_HOSTS = ['myportfoliomp4-6577cc735470.herokuapp.com',
+                 '127.0.0.1']
 
 
 # Application definition
@@ -174,7 +175,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
-# Add this line to fix the error
+# Add this line to fix the error- heroku deployment fail
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
