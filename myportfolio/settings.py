@@ -201,9 +201,9 @@ if 'USE_AWS' in os.environ:
     # Static and media files
     STORAGES = {
         "default": {
-        "BACKEND": "custom_storages.MediaStorage",
-    },
-    "staticfiles": {"BACKEND": "custom_storages.StaticStorage"},
+            "BACKEND": "custom_storages.MediaStorage",
+        },
+        "staticfiles": {"BACKEND": "custom_storages.StaticStorage"},
     }
 
     STATICFILES_LOCATION = 'static'
@@ -219,4 +219,4 @@ STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
 STRIPE_WEBHOOK_SECRET = os.getenv("STRIPE_WEBHOOK_SECRET", "")
 
-DEFAULT_FROM_EMAIL = 'szarvas.webdevelopment@example.com'
+DEFAULT_FROM_EMAIL = 'szarvas.webdevelopment@gmail.com'
