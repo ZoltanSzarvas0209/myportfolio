@@ -2,7 +2,6 @@
 
 function adjustFooter() {
     const body = document.body;
-    const html = document.documentElement;
     const footer = document.querySelector("footer");
 
     // Get total document height

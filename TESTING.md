@@ -137,6 +137,34 @@ W3C validators used for HTML and CSS and JsHint is used to validate JAvaScript.
     </details>
 
 * JavaScript VALIDATION: 
+
+-   <details> <summary> base.html </summary>
+    <img src="static/images/readme_images/validation/base.html_jshint.jpg">
+    </details>
+
+    1. JSHint does not inherently know about Bootstrap, so it assumes bootstrap is an undeclared variable.
+
+-   <details> <summary> base.js </summary>
+    <img src="static/images/readme_images/validation/base.js_jshint.jpg">
+    </details>
+
+-   <details> <summary> quantity_input_script.html </summary>
+    <img src="static/images/readme_images/validation/quantity_input_jshint.jpg">
+    </details>
+
+-   <details> <summary> project.html </summary>
+    <img src="static/images/readme_images/validation/project.html_jshint.jpg">
+    </details>
+
+-   <details> <summary> stripe_elements.js </summary>
+    <img src="static/images/readme_images/validation/stripe_elements.js_jshint.jpg">
+    </details>
+
+    1. Stripe JS Library link is included in base.html
+
+-   <details> <summary> bag.html </summary>
+    <img src="static/images/readme_images/validation/bag.html_jshint.jpg">
+    </details>
     
 
 ## PEP8 , python validation:
