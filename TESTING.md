@@ -77,10 +77,9 @@
 | Bag - remove | Click on button | remove item from shopping cart | PASS |
 | Checkout - adjust bag | Click on button | take back to shopping cart | PASS |
 | Checkout - complete order | Click on button | process payment provided form validation passed | PASS |
-| Footer |  |  | PASS |
-| Footer |  |  | PASS |
-| Footer |  |  | PASS |
-| Footer |  |  | PASS |
+| Footer - email | clcik on e-mail address | open email , ready to be sent to addresee | PASS |
+| Footer - icons | click on each icon | open it in new tab | PASS |
+| Footer - CV | click on download icon | download CV | PASS |
 
 
 -*: edit button dosen't automatically takes the user back to the comment, however feature is functonal - listed for future upgrade
