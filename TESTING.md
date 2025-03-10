@@ -77,6 +77,10 @@
 | Bag - remove | Click on button | remove item from shopping cart | PASS |
 | Checkout - adjust bag | Click on button | take back to shopping cart | PASS |
 | Checkout - complete order | Click on button | process payment provided form validation passed | PASS |
+| Footer |  |  | PASS |
+| Footer |  |  | PASS |
+| Footer |  |  | PASS |
+| Footer |  |  | PASS |
 
 
 -*: edit button dosen't automatically takes the user back to the comment, however feature is functonal - listed for future upgrade
