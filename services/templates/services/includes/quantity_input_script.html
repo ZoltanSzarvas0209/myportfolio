@@ -48,4 +48,22 @@ $(document).on('click', '.decrement-qty', function(e) {
 });
 
 });
+
+
+// no input allowed manually outside given range
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll("input[type='number']").forEach(input => {
+        input.addEventListener("change", function () {
+            let min = parseInt(this.min);
+            let max = parseInt(this.max);
+            let value = parseInt(this.value);
+
+            if (value < min) {
+                this.value = min;
+            } else if (value > max) {
+                this.value = max;
+            }
+        });
+    });
+});
 </script>

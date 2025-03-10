@@ -12,8 +12,6 @@
 
 <details>
 
-<details>
-
 | **Feature** | **Test Method** | **Expectation** | **Outcome** |
 |-------------|-----------------|-----------------|-------------|
 | Header Responsivness | Developer Tools: 320px/375px/425px/768px/1024px/1440px | Fully Responsive Layout | PASS |
@@ -30,8 +28,6 @@
 | Project Page | Developer Tools: 320px/375px/425px/768px/1024px/1440px | Fully Responsive Layout| PASS | 
 | About Page | Developer Tools: 320px/375px/425px/768px/1024px/1440px | Fully Responsive Layout| PASS |
 | Tech Page | Developer Tools: 320px/375px/425px/768px/1024px/1440px | Fully Responsive Layout| PASS | 
-
-</details>
 
 </details>
 
@@ -92,6 +88,18 @@
 
 | **Feature** | **Test Method** | **Expectation** | **Outcome** |
 |-------------|-----------------|-----------------|-------------|
+| Contact Form | Enter invalid input: No Title | No submission allowed - "Please fill in this field response" | PASS |
+| Contact Form | Enter invalid input: No Content | No submission allowed - "Please fill in this field response" | PASS |
+| Contact Form | Enter valid input | Submission allowed - "confirmation feedback" | PASS |
+| Service_details - quantity input | click decrease/increase to reach 0/100 | no change in input | PASS |
+| Service_details - quantity manual input | Enter invalid input | quantity autoatically adjusted to an accepted value | PASS |
+| bag.html - quantity input | click decrease/increase to reach 0/100 | no change in input | PASS |
+| bag.html - quantity manual input | Enter invalid input | quantity autoatically adjusted to an accepted value | PASS |
+| Checkout.html Form | No input in fields/test them all individually | No submission allowed - "Please fill in this field response" | PASS |
+| Checkout.html Card | no input | No submission allowed - "Your card number is incomplete" | PASS |
+| Checkout.html Card | no date input | No submission allowed - "Your expiry date is incomplete" | PASS |
+| Checkout.html Card | no security code input | No submission allowed - "Your security code is incomplete" | PASS |
+| Checkout.html Card | no post code input | No submission allowed - "Your postal code is incomplete" | PASS |
 
 </details>
 
@@ -101,6 +109,11 @@
 
 | **Feature** | **Test Method** | **Expectation** | **Outcome** |
 |-------------|-----------------|-----------------|-------------|
+| Google Chrome | non scripted test of features on desktop | full functionality and compatibility with browser | PASS |
+| Google Chrome | non scripted test of features on mobile | full functionality and compatibility with browser | PASS |
+| Microsoft Edge | non scripted test of features on desktop | full functionality and compatibility with browser | PASS |
+| Microsoft Edge | non scripted test of features on mobile | full functionality and compatibility with browser | PASS |
+| Samsung Internet | non scripted test of features on mobile | full functionality and compatibility with browser | PASS |
 
 </details>
 
@@ -150,6 +163,10 @@ W3C validators used for HTML and CSS and JsHint is used to validate JAvaScript.
 
 -   <details> <summary> quantity_input_script.html </summary>
     <img src="static/images/readme_images/validation/quantity_input_jshint.jpg">
+    </details>
+
+-   <details> <summary> quantity_input_script.html / additional js added to handle manual inputs </summary>
+    <img src="static/images/readme_images/validation/quantity_additional_jshint.jpg">
     </details>
 
 -   <details> <summary> project.html </summary>
