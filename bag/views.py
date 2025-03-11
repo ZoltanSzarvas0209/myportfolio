@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse, HttpResponse
+from django.shortcuts import render, redirect, reverse
 from django.http import JsonResponse
 from django.contrib import messages
 from services.models import Service

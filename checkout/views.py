@@ -11,6 +11,7 @@ from bag.contexts import bag_contents
 
 import stripe
 
+
 def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
@@ -59,7 +60,7 @@ def checkout(request):
         bag = request.session.get('bag', {})
         if not bag:
             messages.error(request, "There's nothing in your bag at the moment")
-            return redirect(reverse('products'))
+            return redirect(reverse('services'))
         
         current_bag = bag_contents(request)
         total = current_bag['total']

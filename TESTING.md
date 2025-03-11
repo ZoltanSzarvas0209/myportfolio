@@ -192,10 +192,50 @@ W3C validators used for HTML and CSS and JsHint is used to validate JAvaScript.
 
 ## Django Automated Tests
 
-- Django's Testing library was used to test Projects's forms. Corresponding PEP8 validation listed in PEP8 section above. Each form was tested with 3 tests.
+- Django's Testing library was used to test Projects's forms,models,views and urls. Corresponding PEP8 validation listed in PEP8 section above.
 
+1. <details> <summary> Services APP </summary>
+    <img src="static/images/readme_images/tests/service_app_tests.jpg">
+    </details>
 
+-   <details> <summary> Test Error </summary>
+    <img src="static/images/readme_images/tests/service_negative_price.jpg">
+    </details>
 
+-   <details> <summary> Solution </summary>
+    code added to Service model to make sure no negative value is allowed on service price.
+        def clean(self):
+        if self.price < 0:
+            raise ValidationError({"price": "Price cannot be negative."})
+    </details>
+
+2. <details> <summary> Profiles APP </summary>
+    <img src="static/images/readme_images/tests/profiles_app_tests.jpg">
+    </details>
+
+3. <details> <summary> Portfolio APP </summary>
+    <img src="static/images/readme_images/tests/portfolio_app_tests.jpg">
+    </details>
+
+4. <details> <summary> Home APP </summary>
+    <img src="static/images/readme_images/tests/home_app_test.jpg">
+    </details>
+
+5. <details> <summary> Contact APP </summary>
+    <img src="static/images/readme_images/tests/contact_app_tests.jpg">
+    </details>
+
+6. <details> <summary> Comments APP </summary>
+    <img src="static/images/readme_images/tests/comments_app_tests.jpg">
+    </details>
+
+7. <details> <summary> Checkout APP </summary>
+    <img src="static/images/readme_images/tests/checkout_app_tests.jpg">
+    </details>
+
+8. <details> <summary> Bag APP </summary>
+    <img src="static/images/readme_images/tests/bag_app_tests.jpg">
+    </details>
 
 # Bugs and Fixes <a name="bugs"></a>
 
@@ -281,3 +321,18 @@ investigating this I found that a variable was called incorrectly.
 8. Bag.html-s table is out of alignment on screens less than 768px.
 
 - solution: added media quieries to fex responsiveness.
+
+9. Automated django testing is failing on checkout app: 
+
+-     def test_checkout_renders_correct_template(self):
+        """Test checkout page renders checkout.html template"""
+        session = self.client.session
+        session['bag'] = {'1': 2}  # Ensure a non-empty bag
+        session.save()
+
+        response = self.client.get(reverse('checkout'))
+        print(response.status_code)  # Debugging
+        print(response.content)  # Show error details if still failing
+
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'checkout/checkout.html')
