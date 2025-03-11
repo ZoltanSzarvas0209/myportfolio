@@ -1,4 +1,4 @@
-
+![Mockup](static/images/amiresponsivemp4.jpg)
 
 # TABLE OF CONTENT
 
