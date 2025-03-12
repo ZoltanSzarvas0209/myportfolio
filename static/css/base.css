@@ -209,6 +209,13 @@ header {
     display: none;
 }
 
+/* ----------------------------------- services/service_details -----------------------------*/
+
+.card {
+    width: 80%;
+    margin: 10%;
+}
+
 /* ------------------------------------ index.html/Home page -------------------------------*/
 .introduction-container {
     width: 90%;
@@ -303,10 +310,6 @@ header {
 }
 
 @media (max-width: 767px) {
-    body {
-        padding-top: 360px;
-    }
-
     #intro {
         text-align: center;
         font-size: 16px;
@@ -349,7 +352,7 @@ header {
 
 @media (max-width: 425px) {
     body {
-        padding-top: 500px;
+        padding-top: 380px;
     }
 
     .hero-box {

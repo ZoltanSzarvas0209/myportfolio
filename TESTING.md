@@ -321,18 +321,3 @@ investigating this I found that a variable was called incorrectly.
 8. Bag.html-s table is out of alignment on screens less than 768px.
 
 - solution: added media quieries to fex responsiveness.
-
-9. Automated django testing is failing on checkout app: 
-
--     def test_checkout_renders_correct_template(self):
-        """Test checkout page renders checkout.html template"""
-        session = self.client.session
-        session['bag'] = {'1': 2}  # Ensure a non-empty bag
-        session.save()
-
-        response = self.client.get(reverse('checkout'))
-        print(response.status_code)  # Debugging
-        print(response.content)  # Show error details if still failing
-
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'checkout/checkout.html')
