@@ -4,14 +4,15 @@ from django.contrib import messages
 from services.models import Service
 
 
-# Create your views here.
-
 def bag(request):
     """ A view to return the shopping bag """
 
     return render(request, 'bag/bag.html')
 
-# view is a duplicate from Bourique Ado project from CodeInstitute tutorial ,  was revised to suit this project.
+# view is a duplicate from Bourique Ado project from CodeInstitute tutorial ,
+# was revised to suit this project.
+
+
 def add_to_bag(request, item_id):
     """ Add a quantity of the specified service to the shopping bag """
 
@@ -22,7 +23,7 @@ def add_to_bag(request, item_id):
 
     if item_id in list(bag.keys()):
         bag[item_id] += quantity
-        messages.success(request, f'Succesfully adjusted quantity!')
+        messages.success(request, 'Succesfully adjusted quantity!')
 
     else:
         bag[item_id] = quantity
@@ -30,6 +31,7 @@ def add_to_bag(request, item_id):
 
     request.session['bag'] = bag
     return redirect(redirect_url)
+
 
 def adjust_bag(request, item_id):
     """Adjust the quantity of the specified product to the specified amount"""
@@ -40,7 +42,7 @@ def adjust_bag(request, item_id):
 
     if quantity > 0:
         bag[item_id] = quantity
-        messages.success(request, f'Succesfully adjusted quantity!')
+        messages.success(request, 'Succesfully adjusted quantity!')
 
     else:
         bag.pop(item_id)
@@ -66,5 +68,5 @@ def remove_from_bag(request, item_id):
             return JsonResponse({'error': 'Item not in bag'}, status=400)
 
     except Exception as e:
-        messages.error(request, f'Error! The selected item was not removed!')
+        messages.error(request, 'Error! The selected item was not removed!')
         return JsonResponse({'error': str(e)}, status=500)

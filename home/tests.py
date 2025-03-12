@@ -5,7 +5,8 @@ from home.views import index
 
 class HomeViewTest(TestCase):
     def test_index_view(self):
-        """Test if the index view returns a 200 status code and uses the correct template"""
+        """Test if the index view returns
+          a 200 status code and uses the correct template"""
         response = self.client.get(reverse('home'))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'home/index.html')

@@ -9,8 +9,10 @@ from portfolio.views import edit_comment, delete_comment
 class CommentModelTest(TestCase):
     def setUp(self):
         """Set up test data for the Comment model."""
-        self.user = User.objects.create_user(username="testuser", password="password123")
-        self.project = Project.objects.create(name="Test Project", description="Test Description")
+        self.user = User.objects.create_user(username="testuser",
+                                             password="password123")
+        self.project = Project.objects.create(name="Test Project",
+                                              description="Test Description")
         self.comment = Comment.objects.create(
             project=self.project,
             user=self.user,
@@ -22,7 +24,7 @@ class CommentModelTest(TestCase):
         self.assertEqual(self.comment.project, self.project)
         self.assertEqual(self.comment.user, self.user)
         self.assertEqual(self.comment.content, "This is a test comment.")
-    
+
     def test_comment_str_method(self):
         """Test the string representation of the comment."""
         expected_str = f"Comment by {self.user.username} on {self.project.name}"

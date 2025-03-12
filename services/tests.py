@@ -20,7 +20,8 @@ class ServiceModelTest(TestCase):
     def test_service_creation(self):
         """Test if the service instance is created successfully."""
         self.assertEqual(self.service.name, "Web Development")
-        self.assertEqual(self.service.description, "Full-stack web development services.")
+        self.assertEqual(self.service.description,
+                         "Full-stack web development services.")
         self.assertEqual(self.service.price, Decimal("499.99"))
 
     def test_str_method(self):
@@ -71,12 +72,14 @@ class ServiceViewsTest(TestCase):
 
     def test_service_detail_view_renders_template(self):
         """Test if the service_detail view renders the correct template."""
-        response = self.client.get(reverse('service_detail', args=[self.service1.id]))
+        response = self.client.get(reverse('service_detail',
+                                           args=[self.service1.id]))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'services/service_detail.html')
 
     def test_service_detail_view_404_renders_default_template(self):
-        """Test if requesting a non-existent service returns a 404 and uses the correct template (if customized)."""
+        """Test if requesting a non-existent service returns
+          a 404 and uses the correct template (if customized)."""
         response = self.client.get(reverse('service_detail', args=[999]))
         self.assertEqual(response.status_code, 404)
 

@@ -1,6 +1,7 @@
 from django.test import TestCase
 from checkout.forms import OrderForm
 
+
 class OrderFormTest(TestCase):
     def test_valid_form(self):
         """Test form is valid with correct data"""
@@ -17,7 +18,7 @@ class OrderFormTest(TestCase):
         }
         form = OrderForm(data=form_data)
         self.assertTrue(form.is_valid())
-    
+
     def test_missing_required_field(self):
         """Test form is invalid when a required field is missing"""
         form_data = {
@@ -32,10 +33,13 @@ class OrderFormTest(TestCase):
         form = OrderForm(data=form_data)
         self.assertFalse(form.is_valid())
         self.assertIn('full_name', form.errors)
-    
+
     def test_placeholder_and_css_classes(self):
         """Test form fields have correct placeholders and CSS classes"""
         form = OrderForm()
-        self.assertEqual(form.fields['full_name'].widget.attrs['placeholder'], 'Full Name *')
-        self.assertEqual(form.fields['email'].widget.attrs['placeholder'], 'Email Address *')
-        self.assertIn('stripe-style-input', form.fields['full_name'].widget.attrs['class'])
+        self.assertEqual(form.fields['full_name'].widget.attrs
+                         ['placeholder'], 'Full Name *')
+        self.assertEqual(form.fields['email'].widget.attrs
+                         ['placeholder'], 'Email Address *')
+        self.assertIn('stripe-style-input',
+                      form.fields['full_name'].widget.attrs['class'])

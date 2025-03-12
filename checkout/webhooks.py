@@ -1,9 +1,8 @@
 import stripe
-import json
 from django.http import JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.conf import settings
-from .models import Order  # Import your Order model if needed
+from .models import Order
 import logging
 
 # imports to set up emails

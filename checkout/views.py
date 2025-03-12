@@ -44,14 +44,15 @@ def checkout(request):
                     order_line_item.save()
                 except Service.DoesNotExist:
                     messages.error(request, (
-                        "One of the service in your bag wasn't found in our database. "
+                        "One of the service in bag wasn't found in database."
                         "Please call us for assistance!")
                     )
                     order.delete()
                     return redirect(reverse('bag'))
 
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(reverse('checkout_success',
+                                    args=[order.order_number]))
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
@@ -59,9 +60,10 @@ def checkout(request):
     else:
         bag = request.session.get('bag', {})
         if not bag:
-            messages.error(request, "There's nothing in your bag at the moment")
+            messages.error(request,
+                           "There's nothing in your bag at the moment")
             return redirect(reverse('services'))
-        
+
         current_bag = bag_contents(request)
         total = current_bag['total']
         stripe_total = round(total * 100)
@@ -138,7 +140,7 @@ def checkout_success(request, order_number):
     messages.success(request, f'Order successfully processed! \
         Your order number is {order_number}. A confirmation \
         email will be sent to {order.email}.')
-    
+
     if 'bag' in request.session:
         del request.session['bag']
 

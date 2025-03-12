@@ -13,19 +13,23 @@ def portfolio(request):
     """ A view to show the portfolio page """
     return render(request, 'portfolio/portfolio.html')
 
+
 def about(request):
     """ A view to show the about page """
     return render(request, 'portfolio/about.html')
+
 
 def tech(request):
     """ A view to show the technologies page """
     return render(request, 'portfolio/tech.html')
 
+
 def projects(request):
     """ A view to show the projects page with projects data """
 
     projects = Project.objects.all()
-    comment_forms = {project.id: CommentForm() for project in projects}  # Dictionary of forms per project
+    # Dictionary of forms per project
+    comment_forms = {project.id: CommentForm() for project in projects}
 
     if request.method == "POST":
         project_id = request.POST.get("project_id")  # Get project ID from form
@@ -44,30 +48,34 @@ def projects(request):
         'comment_forms': comment_forms  # Pass the dictionary to template
     })
 
+
 @login_required
 def edit_comment(request, comment_id):
     comment = get_object_or_404(Comment, id=comment_id)
 
     if request.user != comment.user:
-        return HttpResponseForbidden("You are not allowed to edit this comment.")
+        return HttpResponseForbidden("You're not allowed to edit this comment")
 
     projects = Project.objects.all()  # Load all projects
-    comment_forms = {project.id: CommentForm() for project in projects}  # Default forms for new comments
+    # Default forms for new comments
+    comment_forms = {project.id: CommentForm() for project in projects}
 
     if request.method == "POST":
         form = CommentForm(request.POST, instance=comment)
         if form.is_valid():
             form.save()
             messages.success(request, "Comment updated successfully.")
-            return redirect('projects')  # Reload the projects page after saving
+            # Reload the projects page after saving
+            return redirect('projects')
     else:
-        form = CommentForm(instance=comment)  # Pre-fill form with existing comment
+        # Pre-fill form with existing comment
+        form = CommentForm(instance=comment)
 
     return render(request, 'portfolio/projects.html', {
         'projects': projects,
         'comment_forms': comment_forms,  # Keep normal comment forms
         'edit_comment_form': form,  # Form for the comment being edited
-        'edit_comment_id': comment.id  # ID to identify the comment being edited
+        'edit_comment_id': comment.id  # ID to identify the comment edited
     })
 
 
@@ -76,7 +84,7 @@ def delete_comment(request, comment_id):
     comment = get_object_or_404(Comment, id=comment_id)
 
     if request.user != comment.user:
-        messages.warning(request, ("You are not allowed to delete this comment!"))
+        messages.warning(request, ("You're not allowed to delete comment!"))
 
     comment.delete()
     return redirect('projects')  # Redirect to projects

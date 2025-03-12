@@ -12,11 +12,13 @@ class UserProfileModelTest(TestCase):
         """
         Create a test user before each test
         """
-        self.user = User.objects.create_user(username='testuser', password='testpass123')
+        self.user = User.objects.create_user(username='testuser',
+                                             password='testpass123')
 
     def test_user_profile_created_on_user_creation(self):
         """
-        Test that a UserProfile is automatically created when a new User is created
+        Test that a UserProfile is automatically
+        created when a new User is created
         """
         profile = UserProfile.objects.get(user=self.user)
         self.assertIsInstance(profile, UserProfile)
@@ -48,7 +50,8 @@ class UserProfileModelTest(TestCase):
         self.assertEqual(updated_profile.default_country, "USA")
         self.assertEqual(updated_profile.default_postcode, "10001")
         self.assertEqual(updated_profile.default_town_or_city, "New York")
-        self.assertEqual(updated_profile.default_street_address1, "123 Main St")
+        self.assertEqual(updated_profile.default_street_address1,
+                         "123 Main St")
         self.assertEqual(updated_profile.default_street_address2, "Apt 4B")
         self.assertEqual(updated_profile.default_county, "New York County")
 
@@ -59,8 +62,9 @@ class ProfileViewTemplateTests(TestCase):
         """
         Set up a test user and profile before each test
         """
-        self.user = User.objects.create_user(username='testuser', password='testpass123')
-        self.profile = UserProfile.objects.get(user=self.user)  # Auto-created by signal
+        self.user = User.objects.create_user(username='testuser',
+                                             password='testpass123')
+        self.profile = UserProfile.objects.get(user=self.user)
 
     def test_profile_view_renders_correct_template(self):
         """
@@ -78,7 +82,8 @@ class OrderHistoryViewTemplateTests(TestCase):
         """
         Set up a test user, profile, and order before each test
         """
-        self.user = User.objects.create_user(username='testuser', password='testpass123')
+        self.user = User.objects.create_user(username='testuser',
+                                             password='testpass123')
         self.profile = UserProfile.objects.get(user=self.user)
         self.order = Order.objects.create(
             order_number="123456",
@@ -100,7 +105,8 @@ class OrderHistoryViewTemplateTests(TestCase):
         Test that the order history view renders the correct template
         """
         self.client.login(username='testuser', password='testpass123')
-        response = self.client.get(reverse('order_history', args=[self.order.order_number]))
+        response = self.client.get(reverse('order_history',
+                                           args=[self.order.order_number]))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'checkout/checkout_success.html')
 

@@ -186,6 +186,208 @@ W3C validators used for HTML and CSS and JsHint is used to validate JAvaScript.
 
 ## PEP8 , python validation:
 
+Common issues were rectified in each file before validation:
+    1. line too long  -  no line should exceed 79 characters, adhering to PEP8.
+        - there are a few exception , where issue was kept to maintain readability of the code and to avoid introducing errors.
+    2. no new line at the end of the file
+    2. trailing whitespace
+
+Unexpected errors:
+    1. had to redo line 38 at checkout, models.py as splitting the row to comply with pep8 caused the tests to fail.
+    - no further investigation took place at this time as pep8 error had no immediate effect on the overall project.
+
+-   <details> <summary> SERVICES APP </summary>
+    
+    <details> <summary> Model </summary>
+    <img src="static/images/readme_images/pep8/service_model.jpg">
+    </details>
+
+    <details> <summary> View </summary>
+    <img src="static/images/readme_images/pep8/service_view.jpg">
+    </details>
+
+    <details> <summary> Urls </summary>
+    <img src="static/images/readme_images/pep8/service_urls.jpg">
+    </details>
+
+    <details> <summary> Tests </summary>
+    <img src="static/images/readme_images/pep8/service_tests.jpg">
+    </details>
+
+    </details>
+
+-   <details> <summary> PROFILES APP </summary>
+    
+    <details> <summary> Model </summary>
+    <img src="static/images/readme_images/pep8/profiles_model.jpg">
+    </details>
+
+    <details> <summary> View </summary>
+    <img src="static/images/readme_images/pep8/profiles_view.jpg">
+    </details>
+
+    <details> <summary> Urls </summary>
+    <img src="static/images/readme_images/pep8/profiles_urls.jpg">
+    </details>
+
+    <details> <summary> Tests </summary>
+    <img src="static/images/readme_images/pep8/profiles_test.jpg">
+    </details>
+
+    <details> <summary> TestForms </summary>
+    <img src="static/images/readme_images/pep8/profiles_test_forms.jpg">
+    </details>
+
+    <details> <summary> Forms </summary>
+    <img src="static/images/readme_images/pep8/profiles_form.jpg">
+    </details>
+
+    </details>
+
+-   <details> <summary> PORTFOLIO APP </summary>
+    
+    <details> <summary> Model </summary>
+    <img src="static/images/readme_images/pep8/portfolio_model.jpg">
+    </details>
+
+    <details> <summary> View </summary>
+    <img src="static/images/readme_images/pep8/portfolio_views.jpg">
+    </details>
+
+    <details> <summary> Urls </summary>
+    <img src="static/images/readme_images/pep8/portfolio_urls.jpg">
+    </details>
+
+    <details> <summary> Tests </summary>
+    <img src="static/images/readme_images/pep8/portfolio_tests.jpg">
+    </details>
+
+    </details>
+
+-   <details> <summary> HOME APP </summary>
+
+    <details> <summary> View </summary>
+    <img src="static/images/readme_images/pep8/home_views.jpg">
+    </details>
+
+    <details> <summary> Urls </summary>
+    <img src="static/images/readme_images/pep8/home_urls.jpg">
+    </details>
+
+    <details> <summary> Tests </summary>
+    <img src="static/images/readme_images/pep8/home_tests.jpg">
+    </details>
+
+    </details>
+
+-   <details> <summary> CONTACT APP </summary>
+    
+    <details> <summary> Model </summary>
+    <img src="static/images/readme_images/pep8/contact_model.jpg">
+    </details>
+
+    <details> <summary> View </summary>
+    <img src="static/images/readme_images/pep8/contact_views.jpg">
+    </details>
+
+    <details> <summary> Urls </summary>
+    <img src="static/images/readme_images/pep8/contact_urls.jpg">
+    </details>
+
+    <details> <summary> Tests </summary>
+    <img src="static/images/readme_images/pep8/contact_tests.jpg">
+    </details>
+
+    <details> <summary> TestForms </summary>
+    <img src="static/images/readme_images/pep8/contact_test_form.jpg">
+    </details>
+
+    <details> <summary> Form </summary>
+    <img src="static/images/readme_images/pep8/contact_form.jpg">
+    </details>
+
+    </details>
+
+-   <details> <summary> COMMENTS APP </summary>
+    
+    <details> <summary> Model </summary>
+    <img src="static/images/readme_images/pep8/comment_model.jpg">
+    </details>
+
+    <details> <summary> Urls </summary>
+    <img src="static/images/readme_images/pep8/comment_urls.jpg">
+    </details>
+
+    <details> <summary> Tests </summary>
+    <img src="static/images/readme_images/pep8/comment_tests.jpg">
+    </details>
+
+    <details> <summary> TestForms </summary>
+    <img src="static/images/readme_images/pep8/comment_test_forms.jpg">
+    </details>
+
+    <details> <summary> Form </summary>
+    <img src="static/images/readme_images/pep8/comment_form.jpg">
+    </details>
+
+    </details>
+
+-   <details> <summary> CHECKOUT APP </summary>
+    
+    <details> <summary> Model </summary>
+    <img src="static/images/readme_images/pep8/checkout_models.jpg">
+    </details>
+
+    <details> <summary> View </summary>
+    <img src="static/images/readme_images/pep8/checkout_views.jpg">
+    </details>
+
+    <details> <summary> Urls </summary>
+    <img src="static/images/readme_images/pep8/checkout_urls.jpg">
+    </details>
+
+    <details> <summary> Tests </summary>
+    <img src="static/images/readme_images/pep8/checkout_tests.jpg">
+    </details>
+
+    <details> <summary> TestForms </summary>
+    <img src="static/images/readme_images/pep8/checkout_test_forms.jpg">
+    </details>
+
+    <details> <summary> Form </summary>
+    <img src="static/images/readme_images/pep8/checkout_forms.jpg">
+    </details>
+
+    <details> <summary> Signals </summary>
+    <img src="static/images/readme_images/pep8/checkout_signals.jpg">
+    </details>
+
+    <details> <summary> Webhooks </summary>
+    <img src="static/images/readme_images/pep8/checkout_webhooks.jpg">
+    </details>
+
+    </details>
+
+-   <details> <summary> BAG APP </summary>
+    
+    <details> <summary> View </summary>
+    <img src="static/images/readme_images/pep8/bag_views.jpg">
+    </details>
+
+    <details> <summary> Urls </summary>
+    <img src="static/images/readme_images/pep8/bag_urls.jpg">
+    </details>
+
+    <details> <summary> Tests </summary>
+    <img src="static/images/readme_images/pep8/bag_tests.jpg">
+    </details>
+
+    <details> <summary> Context </summary>
+    <img src="static/images/readme_images/pep8/bag_context.jpg">
+    </details>
+
+    </details>
+
 
 ## Lighthouse 
 
@@ -195,18 +397,21 @@ W3C validators used for HTML and CSS and JsHint is used to validate JAvaScript.
 - Django's Testing library was used to test Projects's forms,models,views and urls. Corresponding PEP8 validation listed in PEP8 section above.
 
 1. <details> <summary> Services APP </summary>
+    
+    <details> <summary> Services </summary>
     <img src="static/images/readme_images/tests/service_app_tests.jpg">
     </details>
 
--   <details> <summary> Test Error </summary>
+    <details> <summary> Test Error </summary>
     <img src="static/images/readme_images/tests/service_negative_price.jpg">
     </details>
 
--   <details> <summary> Solution </summary>
+    <details> <summary> Solution </summary>
     code added to Service model to make sure no negative value is allowed on service price.
         def clean(self):
         if self.price < 0:
             raise ValidationError({"price": "Price cannot be negative."})
+    </details>
     </details>
 
 2. <details> <summary> Profiles APP </summary>

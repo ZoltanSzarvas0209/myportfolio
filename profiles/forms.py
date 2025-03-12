@@ -24,8 +24,9 @@ class UserProfileForm(forms.ModelForm):
         }
 
         self.fields['default_phone_number'].widget.attrs['autofocus'] = True
-        
+
         for field in self.fields:
-            if field in placeholders:  # Check if field exists in placeholders to avoid KeyError
+            # Check if field exists in placeholders to avoid KeyError
+            if field in placeholders:
                 self.fields[field].widget.attrs['placeholder'] = placeholders[field]
             self.fields[field].label = False  # Remove label for all fields

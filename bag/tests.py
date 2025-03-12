@@ -17,7 +17,8 @@ class BagViewsTest(TestCase):
         self.bag_url = reverse('bag')
         self.add_to_bag_url = reverse('add_to_bag', args=[self.service.id])
         self.adjust_bag_url = reverse('adjust_bag', args=[self.service.id])
-        self.remove_from_bag_url = reverse('remove_from_bag', args=[self.service.id])
+        self.remove_from_bag_url = reverse('remove_from_bag',
+                                           args=[self.service.id])
 
     def test_bag_view_renders_correct_template(self):
         """Check if 'bag' view renders 'bag/bag.html'."""
