@@ -64,6 +64,11 @@ header {
     max-width: 10rem;
 }
 
+.project-btn {
+    width: 16rem;
+    margin: 1px;
+}
+
 .quantity-btn {
     font-weight: bold;
     color: white;
@@ -206,6 +211,21 @@ header {
 /* ------------------------------------ projects.html ---------------------------------------*/
 
 .comments-section {
+    display: none;
+}
+
+.comment-form input[type="text"],
+.comment-form textarea {
+    width: 250px; /* Adjust width as needed */
+    max-width: 100%; /* Prevents overflow */
+    height: 30px; /* Set a fixed height */
+    font-size: 14px;
+    border-radius: 5px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.card-text {
     display: none;
 }
 
