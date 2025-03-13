@@ -85,7 +85,7 @@ header {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-#service-btn {
+.service-btn {
     min-width: 8rem;
 }
 
