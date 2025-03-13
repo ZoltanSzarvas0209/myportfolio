@@ -19,7 +19,7 @@
                         {% if project.image %}
                             <img src="{{ project.image.url }}" class="card-img-top" alt="{{ project.name }}">
                         {% else %}
-                            <img src="{% static 'images/default-project.jpg' %}" class="card-img-top" alt="Default Image">
+                            <img src="{% static 'images/default-project.webp' %}" class="card-img-top" alt="Default Image">
                         {% endif %}
                         <div class="card-body text-center">
                             <h5 class="card-title">{{ project.name }}</h5>
