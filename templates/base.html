@@ -6,14 +6,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Preload CSS -->
+    <link rel="preload" as="style" href="{% static 'css/base.css' %}">
+     <!-- preload images to improve performance -->
+     <link rel="preload" as="image" href="{% static 'images/profile.jpg' %}" type="image/jpeg" fetchpriority="high">
+     
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
 
     {% block extra_cdn %}
-    {% endblock %}
-
-    {% block extra_css %}
     {% endblock %}
     
     <script src="{% static 'js/base.js' %}" defer></script>
