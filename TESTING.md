@@ -117,29 +117,94 @@
 
 </details>
 
-### TESTING USER STORIES
-
-<details>
-
-| **Feature** | **Test Method** | **Expectation** | **Outcome** |
-|-------------|-----------------|-----------------|-------------|
-
-</details>
-
-
-
-
 # AUTOMATED TESTING <a name="auto"></a>
 
 ### HTML,CSS and JS validation
 
-* HTML VALIDATION:    
-
 W3C validators used for HTML and CSS and JsHint is used to validate JAvaScript.
+
+#### HTML VALIDATION:    
     
+-   <details> <summary> index.html </summary>
+    <img src="static/images/readme_images/html_validation/home_html.jpg">
+    </details>
+
+-   <details> <summary> portfolio.html </summary>
+    <img src="static/images/readme_images/html_validation/portfolio_html.jpg">
+    </details>
+
+-   <details> <summary> tech.html </summary>
+    
+    Section element was replaced with div to clear warning.
+
+    <details> <summary> Warning </summary>
+    <img src="static/images/readme_images/html_validation/tech_warning_html.jpg">
+    </details>
+
+    <details> <summary> Fixed </summary>
+    <img src="static/images/readme_images/html_validation/tech_fixed_html.jpg">
+    </details>
+
+    </details>
+
+-   <details> <summary> about.html </summary>
+    <img src="static/images/readme_images/html_validation/about_html.jpg">
+    </details>
+
+-   <details> <summary> project.html </summary>
+    <img src="static/images/readme_images/html_validation/project_html.jpg">
+    </details>
+
+-   <details> <summary> contact.html </summary>
+    <img src="static/images/readme_images/html_validation/contact_html.jpg">
+    </details>
+
+-   <details> <summary> service.html </summary>
+    <img src="static/images/readme_images/html_validation/services_html.jpg">
+    </details>
+
+-   <details> <summary> service_details.html </summary>
+    
+    Service-btn id removed and replaced with class on relevent elements.
+
+    <details> <summary> Error </summary>
+    <img src="static/images/readme_images/html_validation/service_details_error_html.jpg">
+    </details>
+
+    <details> <summary> Fixed </summary>
+    <img src="static/images/readme_images/html_validation/service_details_fixed_html.jpg">
+    </details>
+
+    </details>
+
+-   <details> <summary> bag.html </summary>
+    <img src="static/images/readme_images/html_validation/bag_html.jpg">
+    </details>
+
+-   <details> <summary> checkout.html </summary>
+    <img src="static/images/readme_images/html_validation/checkout_html.jpg">
+    </details>
+
+-   <details> <summary> checkout_success.html </summary>
+    <img src="static/images/readme_images/html_validation/checkout_success_html.jpg">
+    </details>
+
+-   <details> <summary> profile.html </summary>
+    
+    Error was due to the need of authentication prevent the validator from fetching the data. Used direct input to go around this problem.
+
+    <details> <summary> Error </summary>
+    <img src="static/images/readme_images/html_validation/profile_error_html.jpg">
+    </details>
+
+    <details> <summary> Fixed </summary>
+    <img src="static/images/readme_images/html_validation/profile_directinput_html.jpg">
+    </details>
+
+    </details>
 
 
-* CSS VALIDATION: 
+#### CSS VALIDATION: 
     
 -   <details> <summary> base.css </summary>
     <img src="static/images/readme_images/validation/basecss.jpg">
@@ -149,7 +214,7 @@ W3C validators used for HTML and CSS and JsHint is used to validate JAvaScript.
     <img src="static/images/readme_images/validation/checkoutcss.jpg">
     </details>
 
-* JavaScript VALIDATION: 
+#### JavaScript VALIDATION: 
 
 -   <details> <summary> base.html </summary>
     <img src="static/images/readme_images/validation/base.html_jshint.jpg">
@@ -184,7 +249,7 @@ W3C validators used for HTML and CSS and JsHint is used to validate JAvaScript.
     </details>
     
 
-## PEP8 , python validation:
+#### PEP8 , python validation:
 
 Common issues were rectified in each file before validation:
     1. line too long  -  no line should exceed 79 characters, adhering to PEP8.
@@ -390,6 +455,65 @@ Unexpected errors:
 
 
 ## Lighthouse 
+
+    Initial test result were a lot lower than expected. There is a general mid-range, 78% score on best practises accross the site ,mainly due to third party (Stripe) cookies.
+    I decided not to address this for the time being as Stripe functionality is key and priority in this project.
+
+    Accessibility scores 100% in most, above 90% for the rest but 1 page. bag.html flags no alt attributes and no accessible names, however upon changing these the warnings did persist and therefore this will need to be investigated further.
+
+    Performance is generally good accross the site with some pages falling in the needs improvement range( 50% - 89% ). I have coverted most images to increase performance from jpeg to webp. Also, included rel=preload and fetchpriority=high links at the <head> for css files and profile image. This had some improvement ,however a few of the site's pages still flaging the issue and needs looking into it more in depth.
+
+-   <details> <summary> All lighthouse testing  </summary>
+    
+    <details> <summary> home </summary>
+    <img src="static/images/readme_images/lighthouse/home_lighthouse.jpg">
+    </details>
+
+    <details> <summary> portfolio </summary>
+    <img src="static/images/readme_images/lighthouse/portfolio_lighthouse.jpg">
+    </details>
+
+    <details> <summary> project </summary>
+    <img src="static/images/readme_images/lighthouse/project_lighthouse.jpg">
+    </details>
+
+    <details> <summary> about </summary>
+    <img src="static/images/readme_images/lighthouse/about_lighthouse.jpg">
+    </details>
+
+    <details> <summary> tech </summary>
+    <img src="static/images/readme_images/lighthouse/tech_lighthouse.jpg">
+    </details>
+
+    <details> <summary> contact </summary>
+    <img src="static/images/readme_images/lighthouse/contact_lighthouse.jpg">
+    </details>
+
+    <details> <summary> service </summary>
+    <img src="static/images/readme_images/lighthouse/service_lighthouse.jpg">
+    </details>
+
+    <details> <summary> service_details </summary>
+    <img src="static/images/readme_images/lighthouse/service_details_lighthouse.jpg">
+    </details>
+
+    <details> <summary> bag </summary>
+    <img src="static/images/readme_images/lighthouse/bag_lighthouse.jpg">
+    </details>
+
+    <details> <summary> checkout </summary>
+    <img src="static/images/readme_images/lighthouse/checkout_lighthouse.jpg">
+    </details>
+
+    <details> <summary> checkout_success </summary>
+    <img src="static/images/readme_images/lighthouse/checkout_lighthousecheckout_success_lighthouse.jpg">
+    </details>
+
+    <details> <summary> profile </summary>
+    <img src="static/images/readme_images/lighthouse/profile_lighthouse.jpg">
+    </details>
+
+    </details>
 
 
 ## Django Automated Tests
