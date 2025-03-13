@@ -14,11 +14,11 @@
                 <div class="image-container my-5">
                     {% if service.image %}
                         <a href="{{ service.image.url }}" target="_blank">
-                            <img class="card-img-top img-fluid" src="{{ service.image.url }}" alt="{{ service.name }}">
+                            <img class="card-img-top img-fluid" src="{{ service.image.url }}" alt="{{ service.name|default:'Service image' }} " rel="noopener noreferrer">
                         </a>
                         {% else %}
                         <a href="">
-                            <img class="card-img-top img-fluid" src="{% static 'images/default-project.webp' %}" alt="{{ service.name }}">
+                            <img class="card-img-top img-fluid" src="{% static 'images/default-project.webp' %}" alt="{{ service.name|default:'Service image' }}">
                         </a>
                     {% endif %}
                 </div>
@@ -37,7 +37,7 @@
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <button class="decrement-qty quantity-btn" 
-                                                data-item_id="{{ service.id }}" id="decrement-qty_{{ service.id }}">
+                                                data-item_id="{{ service.id }}" id="decrement-qty_{{ service.id }}" aria-label="Decrease quantity">
                                                 <span class="icon">
                                                     <i class="fas fa-minus"></i>
                                                 </span>
@@ -47,7 +47,7 @@
                                         data-item_id="{{ service.id }}" id="id_qty_{{ service.id }}">
                                         <div class="input-group-append">
                                             <button class="increment-qty quantity-btn"
-                                                data-item_id="{{ service.id }}" id="increment-qty_{{ service.id }}">
+                                                data-item_id="{{ service.id }}" id="increment-qty_{{ service.id }}" aria-label="Increase quantity">
                                                 <span class="icon">
                                                     <i class="fas fa-plus"></i>
                                                 </span>
